@@ -1,6 +1,7 @@
 import React from 'react';
 
 import CardDisplay from './components/card-display';
+import DummyCards from './dummy-cards';
 
 class App extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class App extends React.Component {
             <input type="tel" id="card-num" />
             <button type="submit">Create</button>
           </form>
-          <CardDisplay total={3} />
+          <CardDisplay cards={DummyCards} />
         </div>
       </div>
     );

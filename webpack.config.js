@@ -5,6 +5,14 @@ module.exports = {
   entry: [
     './main.js',
   ],
+  loader: {
+    test: /\.jsx?$/,
+    exclude: /(node_modules)/,
+    loader: 'babel-loader',
+    query: {
+      presets: ['es2015', 'react']
+    }
+  },
   output: {
     path: path.join(__dirname, 'www'),
     filename: 'bundle.js',

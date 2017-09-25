@@ -6,7 +6,7 @@ class CardDisplay extends React.Component {
   render() {
     return (
       <div className="card-display-container">
-        {this.props.total.map(() => <Card />)}
+        {this.props.cards.map((c, index) => <Card {...c} key={index} />)}
       </div>
     );
   }
