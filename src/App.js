@@ -1,6 +1,8 @@
 import React from 'react';
 
 import CardDisplay from './components/card-display';
+import DisplayOptionNavBar from './components/nav-bar';
+
 import DummyCards from './dummy-cards';
 
 class App extends React.Component {
@@ -8,11 +10,7 @@ class App extends React.Component {
     return (
       <div>
         <div className="nav-bar-form-container">
-          <form className="display-options">
-            <label htmlFor="card-num">Number of Cards: </label>
-            <input type="tel" id="card-num" />
-            <button type="submit">Create</button>
-          </form>
+          <DisplayOptionNavBar />
           <CardDisplay cards={DummyCards} />
         </div>
       </div>

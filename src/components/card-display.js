@@ -5,7 +5,7 @@ import Card from './card';
 class CardDisplay extends React.Component {
   render() {
     return (
-      <div className="card-display-container">
+      <div className="card-display-container flex">
         {this.props.cards.map((c, index) => <Card {...c} key={index} />)}
       </div>
     );
