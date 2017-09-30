@@ -95,7 +95,6 @@
       border: 1px solid darkblue;
       border-radius: 4px;
       margin: 30px 22px;
-      padding: 15px;
       width: calc((100% - 25px)/5);
       transition: 300ms ease-out;
       cursor: pointer;
@@ -117,6 +116,12 @@
     .sub-hover:hover > .card-wrapper:first-of-type {
         display: none;
     }
+
+    /* handle sliding state */
+    .open > .card-wrapper:first-of-type {
+      border-bottom: 1px solid black;
+    }
+
   </style>
 </head>
 <body>

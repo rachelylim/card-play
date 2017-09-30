@@ -1,36 +1,21 @@
 import React from 'react';
 
 import SlidingCard from './sliding-card';
+import MainContent from './main-content';
+import SubContent from './sub-content';
 
 class Card extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
-  getMainDisplay() {
-    const { header, content } = this.props;
-    return (
-      <div className="card-wrapper">
-        <p className="card-header">{header}</p>
-        <p className="card-content">{content}</p>
-      </div>
-    );
-  }
-
-  getSubDisplay() {
-    const { subcontent } = this.props;
-    return (
-      <div className="card-wrapper">
-        <p className="card-content">{subcontent}</p>
-      </div>
-    );
-  }
 
   displayWithHoverSetting() {
+    const { header, content, subcontent } = this.props;
     return (
       <div className="sub-hover">
-        {this.getMainDisplay()}
-        {this.getSubDisplay()}
+        <MainContent header={header} content={content} />
+        <SubContent subcontent={subcontent} />
       </div>
     );
   }
