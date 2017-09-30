@@ -1,11 +1,11 @@
 import React from 'react';
 
+import SlidingCard from './sliding-card';
+
 class Card extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      hoverClass: props.displayStyle === 'hover' ? 'sub-hover' : '',
-    };
+    this.state = {};
   }
   getMainDisplay() {
     const { header, content } = this.props;
@@ -26,22 +26,45 @@ class Card extends React.Component {
     );
   }
 
+  displayWithHoverSetting() {
+    return (
+      <div className="sub-hover">
+        {this.getMainDisplay()}
+        {this.getSubDisplay()}
+      </div>
+    );
+  }
+
+  displayWithSlidingSetting() {
+    return <SlidingCard {...this.props} />;
+  }
+
   handleClick() {
     if (this.props.displayStyle === 'hover') return null;
     debugger
   }
 
   handleDisplaySettings() {
-    if (this.props.displayStyle === 'hover') {
-      return <div className={this.state.hoverClass}>{this.getMainDisplay()}{this.getSubDisplay()}</div>;
+    const { displayStyle } = this.props;
+    switch (displayStyle) {
+      case('hover'): {
+        return this.displayWithHoverSetting();
+      }
+
+      case('slide-down'): {
+        return this.displayWithSlidingSetting();
+      }
+
+      default: {
+        return displaySubContent ? this.getSubDisplay() : this.getMainDisplay();;
+      }
     }
-    return displaySubContent ? this.getSubDisplay() : this.getMainDisplay();
   }
 
   render() {
-    const { displaySubContent, hoverClass } = this.state;
+    const { displaySubContent } = this.state;
     return (
-      <div className={`card-container`} onClick={() => this.handleClick()}>
+      <div className={`card-container`}>
         {this.handleDisplaySettings()}
       </div>
     );
