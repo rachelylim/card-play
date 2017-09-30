@@ -32,7 +32,7 @@ class DisplayOptionNavBar extends React.Component {
     return (
       <div className="option-wrapper flex">
         <label className="option-label" htmlFor="card-num">Sub Content Display: </label>
-        <select onChange={e => this.setState({ subcontentDisplayStyle: e.target.value })}>
+        <select onChange={e => this.setState({ displayStyle: e.target.value })}>
           {this.getSubDisplayOptions()}
         </select>
       </div>

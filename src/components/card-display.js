@@ -4,8 +4,8 @@ import Card from './card';
 
 class CardDisplay extends React.Component {
   render() {
-    const { total, subcontentDisplayStyle, header, content, subcontent } = this.props;
-    const cardProps = { subcontentDisplayStyle, header, content, subcontent };
+    const { total, displayStyle, header, content, subcontent } = this.props;
+    const cardProps = { displayStyle, header, content, subcontent };
     // TOOD: this is a temporary way to create an array of cards
     // eventually each card will have it's own unique content
     return (
