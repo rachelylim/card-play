@@ -1,4 +1,4 @@
-About
+#About
 ---
 Ideal for study cards, language learning, displaying "package" information for businesses/companies etc...
 
@@ -14,22 +14,21 @@ As of now, this project can accept custom information on the following:
 -UI style (hover, click to flip, click for more information to slide down)
 
 The following features are still to come:
--Add unique header/content/subcontent to each individual card that is displayed
--Have the navigation/settings bar be hidden when displaying the cards
--Use redux to track unique card content and state
--maybe each type of card with certain UI features should become its own component, rather than handling
+*Add unique header/content/subcontent to each individual card that is displayed
+*Have the navigation/settings bar be hidden when displaying the cards
+*Use redux to track unique card content and state
+*maybe each type of card with certain UI features should become its own component, rather than handling
  all of that in a single Card component
 
 
-
-Setup
+#Setup
 ---
 
 ```
 npm install
 ```
 
-Usage
+#Usage
 ---
 
 Start the development server with this command:
@@ -38,7 +37,7 @@ Start the development server with this command:
 npm start
 ```
 
-Compile
+#Compile
 ---
 
 ```
