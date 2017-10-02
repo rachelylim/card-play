@@ -1,8 +1,8 @@
 import React from 'react';
 
+import HoverCard from './hover-card';
 import SlidingCard from './sliding-card';
-import MainContent from './main-content';
-import SubContent from './sub-content';
+import FlipCard from './flip-card';
 
 class Card extends React.Component {
   constructor(props) {
@@ -10,38 +10,18 @@ class Card extends React.Component {
     this.state = {};
   }
 
-  displayWithHoverSetting() {
-    const { header, content, subcontent } = this.props;
-    return (
-      <div className="sub-hover">
-        <MainContent header={header} content={content} />
-        <SubContent subcontent={subcontent} />
-      </div>
-    );
-  }
-
-  displayWithSlidingSetting() {
-    return <SlidingCard {...this.props} />;
-  }
-
-  handleClick() {
-    if (this.props.displayStyle === 'hover') return null;
-    debugger
-  }
-
   handleDisplaySettings() {
-    const { displayStyle } = this.props;
-    switch (displayStyle) {
+    switch (this.props.displayStyle) {
       case('hover'): {
-        return this.displayWithHoverSetting();
+        return <HoverCard {...this.props} />;
       }
 
       case('slide-down'): {
-        return this.displayWithSlidingSetting();
+        return <SlidingCard {...this.props} />;
       }
 
       default: {
-        return displaySubContent ? this.getSubDisplay() : this.getMainDisplay();;
+        return <FlipCard {...this.props} />;
       }
     }
   }
